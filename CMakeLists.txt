@@ -16,7 +16,7 @@ add_library(math STATIC
 
 # 让所有依赖 math 的目标都能找到头文件
 target_include_directories(math PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/include
 )
 
 # 2) 可执行文件 hello
@@ -26,10 +26,3 @@ add_executable(hello
 
 # 链接上前面的 math 库
 target_link_libraries(hello PRIVATE math)
-
-# ========= 单元测试（可选） ========= #
-# enable_testing()
-# add_executable(test_add tests/test_add.cc)
-# target_link_libraries(test_add PRIVATE math)
-# add_test(NAME add_tests COMMAND test_add)
-
